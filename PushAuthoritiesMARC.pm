@@ -54,39 +54,17 @@ my $conn = Net::Z3950::ZOOM::connection_new( $server, $port );
 checkError($conn);
 
 # Set connection options now ..
-if ( defined $user ) {
-  Net::Z3950::ZOOM::connection_option_set( $conn, user => $user );
-}
-if ( defined $group ) {
-  Net::Z3950::ZOOM::connection_option_set( $conn, group => $group );
-}
-if ( defined $pw ) {
-  Net::Z3950::ZOOM::connection_option_set( $conn, password => $pw );
-}
-if ( defined $dbName ) {
-  Net::Z3950::ZOOM::connection_option_set( $conn, databaseName => $dbName );
-}
-if ( defined $charset ) {
-  Net::Z3950::ZOOM::connection_option_set( $conn, charset => $charset );
-}
-if ( defined $authenticationMode ) {
-  Net::Z3950::ZOOM::connection_option_set( $conn, authenticationMode => $authenticationMode );
-}
-if ( defined $targetImplementationName ) {
-  Net::Z3950::ZOOM::connection_option_set( $conn, targetImplementationName => $targetImplementationName );
-}
-if ( defined $init_opt_search ) {
-  Net::Z3950::ZOOM::connection_option_set( $conn, init_opt_search => $init_opt_search );
-}
-if ( defined $sru ) {
-  Net::Z3950::ZOOM::connection_option_set( $conn, sru => $sru );
-}
-if ( defined $apdulog ) {
-  Net::Z3950::ZOOM::connection_option_set( $conn, apdulog => $apdulog );
-}
-if ( defined $saveAPDU ) {
-  Net::Z3950::ZOOM::connection_option_set( $conn, saveAPDU => $saveAPDU );
-}
+Net::Z3950::ZOOM::connection_option_set( $conn, user                     => $user )                     if defined $user;
+Net::Z3950::ZOOM::connection_option_set( $conn, group                    => $group )                    if defined $group;
+Net::Z3950::ZOOM::connection_option_set( $conn, password                 => $pw )                       if defined $pw;
+Net::Z3950::ZOOM::connection_option_set( $conn, databaseName             => $dbName )                   if defined $dbName;
+Net::Z3950::ZOOM::connection_option_set( $conn, charset                  => $charset )                  if defined $charset;
+Net::Z3950::ZOOM::connection_option_set( $conn, authenticationMode       => $authenticationMode )       if defined $authenticationMode;
+Net::Z3950::ZOOM::connection_option_set( $conn, targetImplementationName => $targetImplementationName ) if defined $targetImplementationName;
+Net::Z3950::ZOOM::connection_option_set( $conn, init_opt_search          => $init_opt_search )          if defined $init_opt_search;
+Net::Z3950::ZOOM::connection_option_set( $conn, sru                      => $sru )                      if defined $sru;
+Net::Z3950::ZOOM::connection_option_set( $conn, apdulog                  => $apdulog )                  if defined $apdulog;
+Net::Z3950::ZOOM::connection_option_set( $conn, saveAPDU                 => $saveAPDU )                 if defined $saveAPDU;
 
 #$query = Net::Z3950::ZOOM::query_create();
 #Net::Z3950::ZOOM::query_destroy($query);
@@ -98,12 +76,9 @@ my $searchQuery           = "Karel";
 my $resultSet = Net::Z3950::ZOOM::connection_search_pqf( $conn, $searchQuery );
 checkError($conn);
 
-if ( defined $preferredRecordSyntax ) {
-  Net::Z3950::ZOOM::resultset_option_set( $resultSet, preferredRecordSyntax => $preferredRecordSyntax );
-}
-if ( defined $countOfResultSet ) {
-  Net::Z3950::ZOOM::resultset_option_set( $resultSet, count => $countOfResultSet );
-}
+Net::Z3950::ZOOM::resultset_option_set( $resultSet, preferredRecordSyntax => $preferredRecordSyntax ) if defined $preferredRecordSyntax;
+Net::Z3950::ZOOM::resultset_option_set( $resultSet, count => $countOfResultSet ) if defined $countOfResultSet;
+
 my $resultsNo = Net::Z3950::ZOOM::resultset_size($resultSet);
 
 if ($resultsNo) {
