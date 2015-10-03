@@ -23,6 +23,11 @@ my $targetImplementationName = $cfg->{targetImplementationName};
 my $sru = $cfg->{sru};
 my $init_opt_search = $cfg->{init_opt_search};
 
+my $opacFrom = $cfg->{opacFrom};
+my $recordFormat = $cfg->{recordFormat};
+my $recordCharsetFrom = $cfg->{recordCharsetFrom};
+my $recordCharsetInto = $cfg->{recordCharsetInto};
+
 my $debug = $cfg->{debug};
 my $apdulog = $debug;
 my $saveAPDU = $debug;
@@ -47,7 +52,7 @@ Net::Z3950::ZOOM::connection_option_set($conn, saveAPDU => $saveAPDU); checkErro
 #Net::Z3950::ZOOM::query_destroy($query);
 
 my $countOfResultSet = "10";
-my $preferredRecordSyntax = "UNIMARC";
+my $preferredRecordSyntax = "USMARC";
 my $searchQuery = "Karel";
 
 my $resultSet = Net::Z3950::ZOOM::connection_search_pqf($conn, $searchQuery); checkError($conn);
@@ -60,7 +65,25 @@ my $resultsNo = Net::Z3950::ZOOM::resultset_size($resultSet); checkError($conn);
 if ($resultsNo != 0) {
   print "$resultsNo result/s found for query $searchQuery\n";
   my $record = Net::Z3950::ZOOM::resultset_record($resultSet, 0); checkRecordError($record);
-  print "Record: $record\n";
+
+  my $type = $recordFormat;
+  if ($recordCharsetFrom) {
+    $type .= "; charset=$recordCharsetFrom";
+
+    if ($opacFrom) {
+      $type .= "/$opacFrom";
+    }
+
+    if ($recordCharsetInto) {
+      $type .= ",$recordCharsetInto";
+    }
+  }
+
+  my $recordRaw = Net::Z3950::ZOOM::record_get($record, $type, 0);
+
+  print "Record in raw format:\n$recordRaw\n";
+  print "Record type: $type\n";
+
 } elsif ($beVerbose) {
   print "No result found for query $searchQuery\n";
 }

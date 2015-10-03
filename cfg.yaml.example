@@ -11,3 +11,20 @@ authenticationMode: basic
 targetImplementationName: ANYTHING_YOU_WANT
 sru: soap
 init_opt_search: Karel
+
+# See http://www.indexdata.com/yaz/doc/zoom.records.html
+#recordFormat: database
+#recordFormat: syntax
+#recordFormat: schema
+recordFormat: render
+#recordFormat: raw
+#recordFormat: xml
+#recordFormat: opac
+#recordFormat: txml
+#recordFormat: json
+#recordCharsetFrom: 0
+recordCharsetFrom: iso-8859-2
+recordCharsetInto: 0
+#recordCharsetInto: iso-8859-2
+opacFrom: 0
+#opacFrom: utf-8
