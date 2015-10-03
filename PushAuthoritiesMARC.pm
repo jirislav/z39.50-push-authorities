@@ -20,10 +20,20 @@ my $beVerbose = $cfg->{beVerbose};
 my $server = $cfg->{server};
 my $port   = $cfg->{port};
 
+unless ( defined $server and defined $port ) {
+  print "You have to define server & port first!\n";
+  exit 1;
+}
+
+my $dbName = $cfg->{dbName};
+unless ($dbName) {
+  print "Cannot place query on unknown database .. please specify dbName!\n";
+  exit 1;
+}
+
 my $user                     = $cfg->{user};
 my $group                    = $cfg->{group};
 my $pw                       = $cfg->{pw};
-my $dbName                   = $cfg->{dbName};
 my $charset                  = $cfg->{charset};
 my $authenticationMode       = $cfg->{authenticationMode};
 my $targetImplementationName = $cfg->{targetImplementationName};
@@ -44,17 +54,39 @@ my $conn = Net::Z3950::ZOOM::connection_new( $server, $port );
 checkError($conn);
 
 # Set connection options now ..
-Net::Z3950::ZOOM::connection_option_set( $conn, user                     => $user );
-Net::Z3950::ZOOM::connection_option_set( $conn, group                    => $group );
-Net::Z3950::ZOOM::connection_option_set( $conn, password                 => $pw );
-Net::Z3950::ZOOM::connection_option_set( $conn, databaseName             => $dbName );
-Net::Z3950::ZOOM::connection_option_set( $conn, charset                  => $charset );
-Net::Z3950::ZOOM::connection_option_set( $conn, authenticationMode       => $authenticationMode );
-Net::Z3950::ZOOM::connection_option_set( $conn, targetImplementationName => $targetImplementationName );
-Net::Z3950::ZOOM::connection_option_set( $conn, init_opt_search          => $init_opt_search );
-Net::Z3950::ZOOM::connection_option_set( $conn, sru                      => $sru );
-Net::Z3950::ZOOM::connection_option_set( $conn, apdulog                  => $apdulog );
-Net::Z3950::ZOOM::connection_option_set( $conn, saveAPDU                 => $saveAPDU );
+if ( defined $user ) {
+  Net::Z3950::ZOOM::connection_option_set( $conn, user => $user );
+}
+if ( defined $group ) {
+  Net::Z3950::ZOOM::connection_option_set( $conn, group => $group );
+}
+if ( defined $pw ) {
+  Net::Z3950::ZOOM::connection_option_set( $conn, password => $pw );
+}
+if ( defined $dbName ) {
+  Net::Z3950::ZOOM::connection_option_set( $conn, databaseName => $dbName );
+}
+if ( defined $charset ) {
+  Net::Z3950::ZOOM::connection_option_set( $conn, charset => $charset );
+}
+if ( defined $authenticationMode ) {
+  Net::Z3950::ZOOM::connection_option_set( $conn, authenticationMode => $authenticationMode );
+}
+if ( defined $targetImplementationName ) {
+  Net::Z3950::ZOOM::connection_option_set( $conn, targetImplementationName => $targetImplementationName );
+}
+if ( defined $init_opt_search ) {
+  Net::Z3950::ZOOM::connection_option_set( $conn, init_opt_search => $init_opt_search );
+}
+if ( defined $sru ) {
+  Net::Z3950::ZOOM::connection_option_set( $conn, sru => $sru );
+}
+if ( defined $apdulog ) {
+  Net::Z3950::ZOOM::connection_option_set( $conn, apdulog => $apdulog );
+}
+if ( defined $saveAPDU ) {
+  Net::Z3950::ZOOM::connection_option_set( $conn, saveAPDU => $saveAPDU );
+}
 
 #$query = Net::Z3950::ZOOM::query_create();
 #Net::Z3950::ZOOM::query_destroy($query);
@@ -66,8 +98,12 @@ my $searchQuery           = "Karel";
 my $resultSet = Net::Z3950::ZOOM::connection_search_pqf( $conn, $searchQuery );
 checkError($conn);
 
-Net::Z3950::ZOOM::resultset_option_set( $resultSet, preferredRecordSyntax => $preferredRecordSyntax );
-Net::Z3950::ZOOM::resultset_option_set( $resultSet, count => $countOfResultSet );
+if ( defined $preferredRecordSyntax ) {
+  Net::Z3950::ZOOM::resultset_option_set( $resultSet, preferredRecordSyntax => $preferredRecordSyntax );
+}
+if ( defined $countOfResultSet ) {
+  Net::Z3950::ZOOM::resultset_option_set( $resultSet, count => $countOfResultSet );
+}
 my $resultsNo = Net::Z3950::ZOOM::resultset_size($resultSet);
 
 if ($resultsNo) {
@@ -93,7 +129,6 @@ if ($resultsNo) {
   print "Record in raw format:\n$recordRaw\n";
   print "Record type: $type\n";
 
-  Net::Z3950::ZOOM::record_destroy($record);
 }
 elsif ($beVerbose) {
   print "No result found for query $searchQuery\n";

@@ -2,13 +2,13 @@ beVerbose: 1
 debug: 1
 server: 127.0.0.1
 port: 8888
-user: USERNAME
-group: GROUP
-pw: PASSWORD
-dbName: DB_NAME
+#user: USERNAME
+#group: GROUP
+#pw: PASSWORD
+#dbName: DB_NAME
 charset: UTF-8
 authenticationMode: basic
-targetImplementationName: ANYTHING_YOU_WANT
+#targetImplementationName: ANYTHING_YOU_WANT
 sru: soap
 init_opt_search: Karel
 
@@ -22,9 +22,6 @@ recordFormat: render
 #recordFormat: opac
 #recordFormat: txml
 #recordFormat: json
-#recordCharsetFrom: 0
 recordCharsetFrom: iso-8859-2
-recordCharsetInto: 0
 #recordCharsetInto: iso-8859-2
-opacFrom: 0
 #opacFrom: utf-8
