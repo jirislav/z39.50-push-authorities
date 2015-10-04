@@ -66,9 +66,6 @@ Net::Z3950::ZOOM::connection_option_set( $conn, sru                      => $sru
 Net::Z3950::ZOOM::connection_option_set( $conn, apdulog                  => $apdulog )                  if defined $apdulog;
 Net::Z3950::ZOOM::connection_option_set( $conn, saveAPDU                 => $saveAPDU )                 if defined $saveAPDU;
 
-#$query = Net::Z3950::ZOOM::query_create();
-#Net::Z3950::ZOOM::query_destroy($query);
-
 my $countOfResultSet      = "10";
 my $preferredRecordSyntax = "USMARC";
 my $searchQuery           = "Karel";
