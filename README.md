@@ -1,6 +1,6 @@
 This Perl's z39.50 implementation is using the C ZOOM library in order to use one of the Extended Services - Record Update
 
-Documentation of that C library can be found at [IndexData.com](http://www.indexdata.com/yaz/doc/zoom.htm)
+Documentation of that C library can be found at [IndexData.com](http://www.indexdata.com/yaz/doc/zoom.html)
 
 You can run this Perl script after properly configurated in "cfg.yaml" by executing `perl PushAuthoritiesMARC.pm`
 
@@ -23,7 +23,7 @@ If you really want to use the Zebedee tunnel you can use included binary at vend
 
 Or add it to path in order to launch it from everywhere:
 ```
-sudo mv vendor/Winton.org.uk/zebedee /usr/local/bin/
+sudo cp vendor/Winton.org.uk/zebedee /usr/local/bin/
 ```
 
 Example usage:

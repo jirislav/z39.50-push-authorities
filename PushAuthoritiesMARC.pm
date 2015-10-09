@@ -38,6 +38,7 @@ my $charset                  = $cfg->{charset};
 my $authenticationMode       = $cfg->{authenticationMode};
 my $targetImplementationName = $cfg->{targetImplementationName};
 my $sru                      = $cfg->{sru};
+my $sruVersion               = $cfg->{sruVersion};
 my $init_opt_search          = $cfg->{init_opt_search};
 
 my $opacFrom          = $cfg->{opacFrom};
@@ -63,6 +64,7 @@ Net::Z3950::ZOOM::connection_option_set( $conn, authenticationMode       => $aut
 Net::Z3950::ZOOM::connection_option_set( $conn, targetImplementationName => $targetImplementationName ) if defined $targetImplementationName;
 Net::Z3950::ZOOM::connection_option_set( $conn, init_opt_search          => $init_opt_search )          if defined $init_opt_search;
 Net::Z3950::ZOOM::connection_option_set( $conn, sru                      => $sru )                      if defined $sru;
+Net::Z3950::ZOOM::connection_option_set( $conn, sru_version              => $sruVersion )               if defined $sruVersion;
 Net::Z3950::ZOOM::connection_option_set( $conn, apdulog                  => $apdulog )                  if defined $apdulog;
 Net::Z3950::ZOOM::connection_option_set( $conn, saveAPDU                 => $saveAPDU )                 if defined $saveAPDU;
 

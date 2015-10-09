@@ -5,11 +5,15 @@ port: 8888
 #user: USERNAME
 #group: GROUP
 #pw: PASSWORD
-#dbName: DB_NAME
+#dbName: test_us_marc
 charset: UTF-8
 authenticationMode: basic
 #targetImplementationName: ANYTHING_YOU_WANT
 sru: soap
+#sru: get
+#sru: post
+#sru: solr
+sruVersion: 1.1
 init_opt_search: Karel
 
 # See http://www.indexdata.com/yaz/doc/zoom.records.html
