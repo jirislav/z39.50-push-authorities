@@ -1,3 +1,32 @@
+#serverImplementationVersion: "26.10.00"
+#implementationVersion: "1.5"
+implementationName: "Koha Z3950 Update"
+
+fileToTest: capek.marc
+#fileToTest: capek.marcxchange
+#fileToTest: capek.marcxml
+#fileToTest: capek.turbomarc
+#fileToTest: capek.linemarc
+
+
+#recordUpdateAction: recordInsert
+recordUpdateAction: recordReplace
+
+packageName: Karel Čapek - nový
+packageFunction: create
+
+#recordIdOpaque: new
+#recordIdNumber: new
+
+syntax: USMARC
+
+#correlationInfoNote: "5318008"
+#correlationInfoId: 5318008
+
+#elementSetName: Karel Čapek
+
+#updateVersion: "1.06"
+
 beVerbose: 1
 debug: 1
 server: 127.0.0.1
@@ -6,26 +35,13 @@ port: 8888
 #group: GROUP
 #pw: PASSWORD
 #dbName: test_us_marc
-charset: UTF-8
-authenticationMode: basic
-#targetImplementationName: ANYTHING_YOU_WANT
-sru: soap
-#sru: get
-#sru: post
-#sru: solr
-sruVersion: 1.1
-init_opt_search: Karel
 
-# See http://www.indexdata.com/yaz/doc/zoom.records.html
-#recordFormat: database
-#recordFormat: syntax
-#recordFormat: schema
-recordFormat: render
-#recordFormat: raw
-#recordFormat: xml
-#recordFormat: opac
-#recordFormat: txml
-#recordFormat: json
-recordCharsetFrom: iso-8859-2
-#recordCharsetInto: iso-8859-2
-#opacFrom: utf-8
+# Important is not to use charset as it is a problematic while communicating with older Z39.50 Servers
+#charset: UTF-8
+authenticationMode: basic
+#targetImplementationName: bandaska
+#sru: soap
+#sru: post
+sru: get
+#sru: solr
+#sruVersion: 1.1 

@@ -32,3 +32,9 @@ zebedee -T 57779 8888:vega.nkp.cz:7777
 ```
 
 Zebedee compiled from tarballs, which are taken from [Winton.org.uk](http://www.winton.org.uk/zebedee/download.html)
+
+#### Converting linemarc to ISO
+This could be really useful for editing testing marcfile on-the-fly:
+```
+yaz-marcdump -i line -o marc capek.linemarc > capek.marc
+```

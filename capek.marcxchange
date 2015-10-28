@@ -1,0 +1,58 @@
+<collection xmlns="info:lc/xmlns/marcxchange-v1">
+<record>
+  <leader>00966nz  a2200229n  4500</leader>
+  <controlfield tag="001">2</controlfield>
+  <controlfield tag="003">CZ PrNK</controlfield>
+  <controlfield tag="005">20151014192033.0</controlfield>
+  <controlfield tag="008">150504|n|acznnbabn           n a|a      </controlfield>
+  <datafield tag="034" ind1=" " ind2=" ">
+    <subfield code="d">E014.2086</subfield>
+    <subfield code="e">E014.2086</subfield>
+    <subfield code="f">N049.7774</subfield>
+    <subfield code="g">N049.7774</subfield>
+  </datafield>
+  <datafield tag="040" ind1=" " ind2=" ">
+    <subfield code="a">HKA001</subfield>
+    <subfield code="b">cze</subfield>
+    <subfield code="d">ABA001</subfield>
+  </datafield>
+  <datafield tag="043" ind1=" " ind2=" ">
+    <subfield code="a">e-xr---</subfield>
+    <subfield code="b">e-xr-cc</subfield>
+    <subfield code="2">czenas</subfield>
+  </datafield>
+  <datafield tag="080" ind1=" " ind2=" ">
+    <subfield code="a">(437.31-191.2)</subfield>
+    <subfield code="2">MRF_2003</subfield>
+  </datafield>
+  <datafield tag="151" ind1=" " ind2=" ">
+    <subfield code="a">Naučná stezka Karla Čapka (Česko)</subfield>
+  </datafield>
+  <datafield tag="551" ind1=" " ind2=" ">
+    <subfield code="a">Dobříš (Česko : oblast)</subfield>
+  </datafield>
+  <datafield tag="670" ind1=" " ind2=" ">
+    <subfield code="a">www(Památník Karla Čapka)</subfield>
+  </datafield>
+  <datafield tag="680" ind1="0" ind2="0">
+    <subfield code="i">Naučná stezka respektující původní trasu, po které rád chodíval spisovatel Karel Čapek.</subfield>
+  </datafield>
+  <datafield tag="751" ind1="0" ind2="7">
+    <subfield code="a">Naučná stezka Karla Čapka (Czechia : education trail)</subfield>
+    <subfield code="2">eczenas</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://www.capek-karel-pamatnik.cz/vismo/dokumenty2.asp?id_org=200013id=14354p1=1130</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2="2">
+    <subfield code="u">http://stezka.capek-karel-pamatnik.cz/</subfield>
+  </datafield>
+  <datafield tag="856" ind1="4" ind2=" ">
+    <subfield code="u">http://aleph.nkp.cz/aleph-cgi/show_map?ll=49.77742,14.20864&amp;z=12</subfield>
+    <subfield code="y">Zobrazit na mapě</subfield>
+  </datafield>
+  <datafield tag="942" ind1=" " ind2=" ">
+    <subfield code="a">GEOGR_NAME</subfield>
+  </datafield>
+</record>
+</collection>

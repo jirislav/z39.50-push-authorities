@@ -1,0 +1,58 @@
+<collection xmlns="http://www.indexdata.com/turbomarc">
+<r>
+  <l>00966nz  a2200229n  4500</l>
+  <c001>2</c001>
+  <c003>CZ PrNK</c003>
+  <c005>20151014192033.0</c005>
+  <c008>150504|n|acznnbabn           n a|a      </c008>
+  <d034 i1=" " i2=" ">
+    <sd>E014.2086</sd>
+    <se>E014.2086</se>
+    <sf>N049.7774</sf>
+    <sg>N049.7774</sg>
+  </d034>
+  <d040 i1=" " i2=" ">
+    <sa>HKA001</sa>
+    <sb>cze</sb>
+    <sd>ABA001</sd>
+  </d040>
+  <d043 i1=" " i2=" ">
+    <sa>e-xr---</sa>
+    <sb>e-xr-cc</sb>
+    <s2>czenas</s2>
+  </d043>
+  <d080 i1=" " i2=" ">
+    <sa>(437.31-191.2)</sa>
+    <s2>MRF_2003</s2>
+  </d080>
+  <d151 i1=" " i2=" ">
+    <sa>Naučná stezka Karla Čapka (Česko)</sa>
+  </d151>
+  <d551 i1=" " i2=" ">
+    <sa>Dobříš (Česko : oblast)</sa>
+  </d551>
+  <d670 i1=" " i2=" ">
+    <sa>www(Památník Karla Čapka)</sa>
+  </d670>
+  <d680 i1="0" i2="0">
+    <si>Naučná stezka respektující původní trasu, po které rád chodíval spisovatel Karel Čapek.</si>
+  </d680>
+  <d751 i1="0" i2="7">
+    <sa>Naučná stezka Karla Čapka (Czechia : education trail)</sa>
+    <s2>eczenas</s2>
+  </d751>
+  <d856 i1="4" i2="2">
+    <su>http://www.capek-karel-pamatnik.cz/vismo/dokumenty2.asp?id_org=200013id=14354p1=1130</su>
+  </d856>
+  <d856 i1="4" i2="2">
+    <su>http://stezka.capek-karel-pamatnik.cz/</su>
+  </d856>
+  <d856 i1="4" i2=" ">
+    <su>http://aleph.nkp.cz/aleph-cgi/show_map?ll=49.77742,14.20864&amp;z=12</su>
+    <sy>Zobrazit na mapě</sy>
+  </d856>
+  <d942 i1=" " i2=" ">
+    <sa>GEOGR_NAME</sa>
+  </d942>
+</r>
+</collection>

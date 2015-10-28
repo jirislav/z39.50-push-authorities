@@ -1,0 +1,18 @@
+00966nz  a2200229n  4500
+001 new
+003 CZ PrNK
+005 20151014192033.0
+008 150504|n|acznnbabn           n a|a      
+034    $d E014.2086 $e E014.2086 $f N049.7774 $g N049.7774
+040    $a HKA001 $b cze $d ABA001
+043    $a e-xr--- $b e-xr-cc $2 czenas
+080    $a (437.31-191.2) $2 MRF_2003
+151    $a Dobrý den paní Šubová
+551    $a Dobříš (Česko : oblast)
+670    $a www(Památník Karla Čapka)
+680 00 $i Naučná stezka respektující původní trasu, po které rád chodíval spisovatel Karel Čapek.
+751 07 $a Naučná stezka Karla Čapka (Czechia : education trail) $2 eczenas
+856 42 $u http://www.capek-karel-pamatnik.cz/vismo/dokumenty2.asp?id_org=200013id=14354p1=1130
+856 42 $u http://stezka.capek-karel-pamatnik.cz/
+856 4  $u http://aleph.nkp.cz/aleph-cgi/show_map?ll=49.77742,14.20864&z=12 $y Zobrazit na mapě
+942    $a GEOGR_NAME
